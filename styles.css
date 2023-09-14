@@ -1,31 +1,40 @@
 
 body {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 1fr 6fr;
-    color: #FFFFFF;
-    font-size: 18px;
+    grid-template-columns: auto 2fr;
+    grid-template-rows: auto 1fr;
+    color: white;
+    font-size: 22px;
     font-family: 'Lato', sans-serif;
 }
+
+#header-container, #sidebar-container, #main-container {
+padding: 10px 30px 10px 30px;
+}
+
+.icon:hover, .profile-pic:hover, h2:hover, 
+input:hover, h3:hover, .project-card:hover, 
+.trending:hover, .announcement:hover, .dash-item:hover, button:hover {
+    opacity: 0.6;
+}
+
+
+/* HEADER */
 
 #header-container {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto;
-    grid-column: 2/4;
+    grid-column: 2/3;
     grid-row: 1/2;
     background-color: #333333;
-    padding: 1% 3% 1% 3%;
-    gap: 20px
-
+    
 }
 
 #head-top {
     display:grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    /* border: white 1px solid; */
-
 }
 
 #search {
@@ -36,8 +45,6 @@ body {
     align-items: center;
 }
 
-
-
 #profile {
     display: flex;
     gap:30px;
@@ -45,19 +52,16 @@ body {
     justify-content: flex-end;
     flex-grow: 0;
     margin-left: 20px;
-    
 }
-
 
 input {
     height:fit-content;
     border-radius: 8px;
     border: none;
-    padding:1%;
+    padding: 1% 2%;
     margin-right: 5px;
     background-color: #222222;
-    color: #D59BF6
-    
+    color: #D59BF6   
 }
 
 input:focus{
@@ -69,8 +73,6 @@ input:focus{
     grid-template-columns: repeat(2, auto);
     gap:20px;
     align-items: center;
-    /* border: white 1px solid; */
-
 }
 
 #button-container{
@@ -83,18 +85,11 @@ input:focus{
 button { 
     background-color: #333333;
     width: auto;
-    margin-left: 24px;
+    margin-left: 10px;
     color:#FFFFFF;
-    font-size: 1rem;
+    font-size: 1.4rem;
     padding: 0 10px 0 10px;
     border:none;
-    border-right: #D59BF6 solid 2px;
-    border-left: #D59BF6 solid 2px;
-}
-
-button:hover {
-    opacity: 0.6;
-    /* border-bottom: #D59BF6 solid 2px */
 }
 
 #hello {
@@ -103,35 +98,149 @@ button:hover {
     align-items: center;
     gap:20px;
     justify-content: left;
-    /* border: white 1px solid; */
-
 }
 
-.icon {
-    width:20px;
-    height: auto;
+.icon .profile-pic{
     flex-grow: 0;
 }
-
-.icon:hover, .profile-pic:hover, h2:hover, input:hover{
-    opacity: 0.6;
+.icon {
+    width:20px;
 }
 
 .profile-pic {
-    width: 50px;
-    flex-grow: 0;
-    /* border: white 1px solid; */
-
+    width: 40px;
 }
+
+.large {
+    width: 60px;
+}
+
+/* SIDEBAR */
 
 #sidebar-container{
+    display: grid;
+    grid-template-rows: 1fr auto;
     grid-column: 1/2;
     grid-row: 1/3;
-    background-color: #222222
+    background-color: #222222;
+    color: #CCCCCC;
+    
 }
 
+#main-icon {
+    width: 35px;
+}
+
+.main-dash {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #D59BF6;
+}
+
+.dash-menu {
+    width:25px;
+}
+
+#dashboard-two {
+    align-self: end;
+}
+
+.dash-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 20px;
+
+}
+
+/* MAIN CONTAINER */
+
 #main-container{
-    grid-column: 2/4;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-column: 2/3;
     grid-row: 2/3;
     background-color: #111111;
+    gap:30px;
 }
+
+.card {
+    display:grid;
+    gap:10px;
+    background-color: #333333;
+    font-size: 0.8rem;
+    border-radius: 1%;
+    padding: 20px;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.card-text {
+    color: #CCCCCC;
+}
+
+/* PROJECTS */
+
+#projects {
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto 1fr;
+    grid-column: 1/2;
+}
+
+#projects h3{
+    grid-column: 1/3;
+}
+
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); 
+    grid-auto-rows: max-content;
+    gap: 30px;
+}
+
+.project-card {
+    font-size: 1rem; 
+    border-left: #D59BF6 solid 5px;
+    box-sizing: border-box;
+    max-width: 465px;
+}
+
+.project-icons{
+    justify-self: end;
+}
+
+#chart {
+    width: 120px;
+    justify-self: center;
+}
+
+/* ANNOUNCEMENTS & TRENDS  */
+
+#main-right {
+    display: grid;
+    grid-column: 2/3;
+    align-content: start;
+}
+
+#announcements, #trends {
+    display: grid;
+    grid-template-rows: auto 1fr; 
+}
+
+.announcement-border {
+    border-bottom: #222222 solid 1px;
+}
+
+.trending{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap:20px;
+    align-items: center;
+}
+
+
